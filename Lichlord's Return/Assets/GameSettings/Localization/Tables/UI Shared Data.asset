@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 64922df6751a90144a8b0e24c83a1f97
+  m_Entries:
+  - m_Id: 8643403776
+    m_Key: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 830672461824
+    m_Key: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23654850093056
+    m_Key: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30593487200256
+    m_Key: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30660495400960
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30745799155712
+    m_Key: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43223518011392
+    m_Key: Load
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44336229113856
+    m_Key: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44770255691776
+    m_Key: Save
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2292701814640345112
+  references:
+    version: 2
+    RefIds:
+    - rid: 2292701814640345112
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1738924241244

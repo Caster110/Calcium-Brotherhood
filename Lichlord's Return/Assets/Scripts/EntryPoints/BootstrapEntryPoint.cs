@@ -1,17 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 public class BootstrapEntryPoint : MonoBehaviour
 {
-    [SerializeField] private bool devMode = false;
-    [SerializeField] private TilemapEditor tilemapEditor;
-    [SerializeField] private TilemapView view;
-    private void Start()
+    private async void Awake()
     {
-        /*if (devMode)
+        SettingsConfig settingsConfig = SaveSystem.LoadObject<SettingsConfig>("SettingsConfig");
+        if (settingsConfig == null)
         {
-            view.SetGrid(tilemapEditor.Init());
-        }*/
+            settingsConfig = new SettingsConfig();
+        }
 
+        Task localizationTask = LocalizationService.Init(settingsConfig.languageID);
+
+        InputHandler.Instance.Init();
+
+        await Task.WhenAll(localizationTask);
+
+
+        Debug.Log("All services initialized. Granting player control.");
     }
 }

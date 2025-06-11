@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: fe668d66ac7bccf45a385e7ade53140e
   m_currentHash:
     serializedVersion: 2
-    Hash: 5a675da707c039497e63ea7d4f5ea9d0
+    Hash: 1044a34ad1e3aca193284533bebd4dba
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -44,7 +44,11 @@ MonoBehaviour:
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
+  - {fileID: 11400000, guid: 01fcf5631bb32c24bb42a56e33894598, type: 2}
   - {fileID: 11400000, guid: 3d8fac0d680e4654ba5c5a05a4905b59, type: 2}
+  - {fileID: 11400000, guid: f3d0d576575aa684789a110f885c97f7, type: 2}
+  - {fileID: 11400000, guid: 00f665d8d32ffb54782585e8ef7ff04f, type: 2}
+  - {fileID: 11400000, guid: 75ee76b05efc50c4aa765de9bbdf2bfe, type: 2}
   - {fileID: 11400000, guid: 023a997859e99cd44be71d5116d87bd0, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
@@ -87,7 +91,16 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - BasicTiles
+    - UtilityTiles
     - Tiles
+    - Locale
+    - Locale-en
+    - Locale-ru
+    - Preload
+    - Enemies
+    - Traps
+    - Abilities
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 893d7c60a17d88947b2723b22242ac2c, type: 2}

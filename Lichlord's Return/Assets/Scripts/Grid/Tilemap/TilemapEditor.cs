@@ -1,48 +1,45 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class TilemapEditor : MonoBehaviour
 {
-    [SerializeField] private TilemapView view;
-    [SerializeField] private new Camera camera;
-    [SerializeField] private int width;
-    [SerializeField] private int height;
-    [SerializeField] private float cellSize;
-    [SerializeField] private Vector3 position;
-    [SerializeField] private int TileID = 0;
-    private Grid<int> tilemap;
-
-    private void Start()
+    [SerializeField] private bool newSave;
+    [SerializeField] private string newSaveName;
+    [SerializeField] private List<Tile> tilePalette;
+    [SerializeField] private int TileInPaletteID;
+    private TilemapModel tilemap;
+    public void Init(TilemapModel tilemap, GridInputHandler gridInputHandler)
     {
-        tilemap = new Grid<int>(width, height, cellSize, position, (int x, int y) => new GridObject<int>(x, y));
-        view.SetGrid(tilemap);
+        gridInputHandler.OnCellClicked += GridClickHandler_OnCellChosen;
+        this.tilemap = tilemap;
     }
+    private void GridClickHandler_OnCellChosen(object sender, GridInputHandler.CellCoords e)
+    {
+        tilemap.Grid.SetGridObjectValue(e.toX, e.toY, tilePalette[TileInPaletteID]);
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.mouseScrollDelta.y > 0)
         {
-            TileID++;
+            if (TileInPaletteID < tilePalette.Count - 1)
+                TileInPaletteID++;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.mouseScrollDelta.y < 0)
         {
-            if (TileID > 0)
-                TileID--;
+            if (TileInPaletteID > 0)
+                TileInPaletteID--;
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            tilemap = SaveSystem.LoadMostRecentObject<Grid<int>>();
-            view.SetGrid(tilemap);
+            tilemap.InitNewGrid(SaveSystem.LoadMostRecentObject<Grid<Tile>>());
             Debug.Log("Tilemap loaded!");
         }
-        if (Input.GetMouseButton(0))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
-            Vector3 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
-            tilemap.SetGridObjectValue(mouseWorldPosition, TileID);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SaveSystem.SaveObject(tilemap);
+            if (newSave)
+                SaveSystem.SaveObject(tilemap.Grid);
+            else
+                SaveSystem.SaveObject(newSaveName, tilemap.Grid, newSave);
             Debug.Log("Tilemap saved!");
         }
     }

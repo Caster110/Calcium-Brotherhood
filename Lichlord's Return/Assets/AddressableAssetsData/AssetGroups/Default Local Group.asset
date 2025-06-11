@@ -17,16 +17,34 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: fe668d66ac7bccf45a385e7ade53140e
   m_SerializeEntries:
+  - m_GUID: 14dcb01ff9774b64887468a72a1c48cf
+    m_Address: Assets/Addressables/Traps
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Traps
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6af1be52c974dc34c8d66db9436bc8aa
     m_Address: Assets/Addressables/Assets/Addressables
     m_ReadOnly: 0
     m_SerializedLabels:
     - Tiles
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1cb0064525cf4c4e8652c5ba0eb03db
+    m_Address: Assets/Addressables/Enemies
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemies
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a6bfaa01d09be144fa4cc62b6ddb9c72
     m_Address: Assets/Addressables
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7c0a73c3de9c9946808f4f41471b398
+    m_Address: Assets/Addressables/Abilities
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Abilities
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1783ce6fb7ad4084ab977483827736d6, type: 2}
